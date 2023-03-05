@@ -1,9 +1,25 @@
-import React from 'react'
+import React from 'react';
+import Head from 'next/head';
 
-const Layout = () => {
+import { Footer, Navbar } from '.';
+
+const Layout = ({ children }) => {
   return (
-    <div>Layout</div>
-  )
-}
+    <div className="layout">
+      <Head>
+        <title>Acutech Store</title>
+      </Head>
+      <header>
+        <Navbar />
+      </header>
+      <main className="main-container">
+        {children}
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;
